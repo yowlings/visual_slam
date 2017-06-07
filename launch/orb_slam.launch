@@ -1,0 +1,26 @@
+<launch>
+	<arg name="simulation"        default="false"   doc="set flags to indicate this xbot is run in simulation mode."/>
+	<!-- Load the URDF/Xacro model of our robot -->
+
+
+
+	<!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find visual_slam)/map/xlab401.yaml" /> -->
+	<!--sensor asus depth camera-->
+	<include file="$(find xbot_bringup)/launch/includes/sensor.launch">
+	<arg name="rgb_processing" default="false" />
+	<arg name="depth_registration" default="false" />
+	<arg name="depth_processing" default="false" />
+	<arg name="scan_topic" default="/asus_scan" />
+	<arg name = "3d_sensor" value = "asus_xtion_pro"/>
+	</include>
+
+	<!-- ORB RGBD -->
+	<node name="orb" pkg="ORB_SLAM2" type="Mono" args="/home/roc/code/orbslam/ORB_SLAM2_new/Vocabulary/ORBvoc.txt /home/roc/code/orbslam/ORB_SLAM2_new/Examples/RGB-D/TUM1.yaml">
+	</node>
+
+	<!-- rviz -->
+	<node name="orb_rviz" pkg="rviz" type="rviz" args="-d $(find visual_slam)/rviz/orb_rviz.rviz"/>
+
+
+
+</launch>

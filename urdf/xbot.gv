@@ -1,0 +1,5 @@
+digraph G {
+node [shape=box];
+"camera_platform" [label="camera_platform"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+}
