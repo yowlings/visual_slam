@@ -23,7 +23,7 @@ using namespace cv;
 int main(int argc, char** argv)
 {
     Mat image;
-    image = imread("/home/roc/Pictures/photos/144227568246_3.jpg",1);
+    image = imread("/home/roc/Pictures/testpic/1.jpg",1);
     namedWindow("Display Image", CV_WINDOW_AUTOSIZE);
     imshow("Display Image", image);
     waitKey(0);

@@ -202,3 +202,6 @@ include_directories(
 add_executable(getImage src/get_image.cpp)
 target_link_libraries(getImage ${catkin_LIBRARIES})
 add_dependencies(getImage visual_slam_generate_messages_cpp)
+add_executable(base64map src/base64map.cpp)
+target_link_libraries(base64map ${catkin_LIBRARIES})
+add_dependencies(base64map visual_slam_generate_messages_cpp)
